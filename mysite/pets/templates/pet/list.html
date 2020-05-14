@@ -1,0 +1,17 @@
+{% extends "base.html" %} 
+{% block content %}
+
+{% if request.user.is_authenticated %}
+    <a style="margin-top: 1rem" href="{% url 'pet-create-page' %}">Create Pet</a>
+{% endif %}
+
+<ul>
+    {% for pet in pets %}
+    <li>
+        <strong>Pet name:</strong>
+        <a href="{% url 'pet-detail-page' pet.id %}">{{pet.pet_name}}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

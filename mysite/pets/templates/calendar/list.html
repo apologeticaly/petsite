@@ -1,0 +1,21 @@
+{% extends "base.html" %} 
+{% block content %}
+
+{% if request.user.is_authenticated %}
+    <a href="{% url 'appointment-create-page' %}">Create Appointment</a>
+{% endif %}
+
+<ul>
+    {% for appointment in appointments %}
+    <li>
+        <strong>Date:</strong>
+        {{appointment.date_of_appointment}}
+        <br />
+        <span>
+        <strong>Pet:</strong>
+        <a href="{% url 'pet-detail-page' appointment.pet.id %}">{{appointment.pet}}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

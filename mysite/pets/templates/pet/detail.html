@@ -1,0 +1,37 @@
+  
+{% extends "base.html" %}
+
+{% block content %}
+  <div>
+    <div>
+      <h3>{{ pet.pet_name }}</h3>
+      <hr>
+      <p>
+          <strong>
+              Owner:
+          </strong>
+          {{pet.owner}}
+      </p>
+      <p>
+          <strong>
+              Species:
+          </strong>
+          {{pet.species}}
+      </p>
+      <p>
+          <strong>
+              Breed:
+          </strong>
+          {{pet.breed}}
+      </p>
+      <p>
+          <strong>
+              Weight:
+          </strong>
+          {{pet.weight_in_pounds}}lbs
+      </p>
+      <hr>
+      <a href="{% url 'pets-list-page' %}">Back to List</a>
+    </div>
+  </div>
+{% endblock %}

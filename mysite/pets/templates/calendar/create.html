@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url 'calendar-list-page' %}">Back</a>
+<h2>Schedule an Appointment</h2>
+<br />
+<form method="POST">
+    <div>
+        {{ form.as_p }}
+    </div>
+    <div>
+        {% csrf_token %}
+    </div>
+    <button type="submit">Submit</button>
+</form>
+{% endblock content %}
+
